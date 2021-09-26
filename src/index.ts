@@ -18,7 +18,7 @@ async function startApolloServer(){
       typeDefs: typeDefs,
       resolvers: resolvers
     })
-    await server.start()
+    // await server.start()
     const { url } = await server.listen()
     console.log(`🚀 Server ready at ${url}`);
 }

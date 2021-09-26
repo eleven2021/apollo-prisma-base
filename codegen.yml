@@ -1,0 +1,11 @@
+schema: "./schema.gql"
+generates:
+  gqlTypes.ts:
+    plugins:
+      - typescript
+      - typescript-resolvers
+    config:
+      mapperTypeSuffix: Model
+      mappers:
+        User: "@prisma/client/index.d#User"
+      contextType: ./src/context#Context
