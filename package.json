@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:eleven2021/apollo-prisma-base.git",
-  "author": "watase <eleven2021>",
+  "author": "e1even",
   "license": "MIT",
   "scripts": {
     "generate": "graphql-codegen --config codegen.yml",
