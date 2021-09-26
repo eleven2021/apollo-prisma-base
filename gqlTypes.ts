@@ -51,6 +51,7 @@ export type MutationLoginArgs = {
 
 export type Query = {
   __typename?: 'Query';
+  me?: Maybe<User>;
   users: Array<Maybe<User>>;
 };
 
@@ -167,6 +168,7 @@ export type MutationResolvers<ContextType = Context, ParentType extends Resolver
 };
 
 export type QueryResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  me?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;
   users?: Resolver<Array<Maybe<ResolversTypes['User']>>, ParentType, ContextType>;
 };
 

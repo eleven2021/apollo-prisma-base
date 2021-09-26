@@ -4,6 +4,9 @@ import { Resolvers } from "../gqlTypes";
 import { readFileSync } from "fs";
 import { createContext } from "./context";
 import { resolvers } from "./resolvers";
+import { PrismaClient } from "@prisma/client";
+const port = process.env.PORT;
+const prisma = new PrismaClient();
 
 const getTypeDefs = () => {
   const schemaStr = readFileSync("schema.gql", "utf8");
@@ -16,9 +19,9 @@ const getTypeDefs = () => {
 async function startApolloServer(){
     const server = new ApolloServer({
       typeDefs: getTypeDefs(),
-      context: createContext,
       resolvers:  resolvers as IResolvers,
-      debug: true
+      debug: true,
+      context: ({ req }) => createContext(req)
     })
     // await server.start()
     const { url } = await server.listen();

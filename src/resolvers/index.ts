@@ -1,9 +1,9 @@
 import { Resolvers } from "../../gqlTypes";
 import { createUser,login  } from './mutations'
-import { users } from './queries'
+import { users,me } from './queries'
 
 const Query: Resolvers["Query"] = {
-  users,
+  users,me
 };
 
 const Mutation: Resolvers["Mutation"] = {

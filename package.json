@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "generate": "graphql-codegen --config codegen.yml",
-    "dev": "ts-node src/index.ts"
+    "dev": "ts-node src/index.ts",
+    "test-query": "ts-node ./test-query.ts"
   },
   "dependencies": {
     "@graphql-codegen/cli": "^2.2.0",
@@ -18,7 +19,9 @@
     "@types/bcrypt": "^5.0.0",
     "apollo-server": "^3.3.0",
     "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
     "graphql": "^15.6.0",
+    "graphql-request": "^3.5.0",
     "graphql-tools": "^8.2.0",
     "jsonwebtoken": "^8.5.1",
     "typescript": "^4.4.3"
